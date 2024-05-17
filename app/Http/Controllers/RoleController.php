@@ -13,8 +13,10 @@ class RoleController extends Controller
     public function index() //afficher la tableau des roles sur la page 
     {
         //variable role qui recupere l'ensemble des roles pour envoyer sur la page html
-        $roles = Role::get();
-        return View('role.index', compact('roles'));
+        $roles = Role::all();
+        return view('role.index', [
+            'roles' => $roles
+        ]);
     }
 
     /**
